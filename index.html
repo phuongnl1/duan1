@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".dungluong").click(function(){
+    var id = $(this).data("id");
+    console.log(id);
+    $(".divColor").hide();
+    $("#" + id + "Color").show();
+
+    $("#dungluong").val(id);
+    $(".desc").hide();
+    $("#" + id + "Desc").show();
+  });
+
+  $(".color").click(function(){
+    var color = $(this).data("color");
+    console.log(color);
+    $("#mau").val(color);
+  });
+  $(".divColor").hide();
+  $(".desc").hide();
+});
+</script>
+</head>
+<body>
+    <!-- Duyệt tất cả dung lượng sản phẩm -->
+    <button class="dungluong" data-id="256">256GB</button>
+    <button class="dungluong" data-id="512">512GB</button>
+
+    <!-- Duyệt tất cả màu sắc sản phẩm theo dung lương -->
+    <p class="divColor" id="256Color">
+        256: 
+        <button class="color" data-color="Xanh">Xanh</button>
+        <button class="color" data-color="Den">Den</button>
+    </p>
+    <p class="divColor" id="512Color">512: 
+        <button class="color" data-color="Tim">Tim</button>
+        <button class="color" data-color="Vang">Vang</button>
+    </p>
+
+    <!-- Duyệt tất cả mô tả theo dung lượng -->
+    <p class="desc" id="256Desc">256 Desc</p>
+    <p class="desc" id="512Desc">512 Desc</p>
+
+    <input type="text" id="dungluong" name="dungluong" value="256">
+    <input type="text" id="mau" name="mau" value="Tim">
+
+</body>
+</html>
