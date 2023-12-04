@@ -17,38 +17,6 @@ if (isset($_GET['act'])) {
         case 'product-detail':
             $id = $_GET['id'];
             $product = getOneProduct($id);
-            $a = [];
-            for ($i = 1; $i <=5 ;$i++) {
-                $a[$i] = rand(1, 100);
-            }
-            /*
-            echo '<pre>';
-            var_dump($a);
-            echo '</pre>';
-
-            $array = [1,2,4,5];
-            echo '<pre>';
-            var_dump($array);
-            echo '</pre>';
-            */
-
-            $b = [
-                'id' => 1,
-                'name' => 'Product 01',
-                'desc' => 'Description 01',
-                'price' => 100,
-                'status' => 1,
-                ];
-
-            echo '<pre>';
-            var_dump($b);
-            echo '</pre>';
-            
-            echo '<pre>';
-            var_dump($product);
-            echo '</pre>';
-            
-            exit;
             $category = getOneCategory($product['category_id']);
             if (isset($_SESSION['objuser']['user_id'])) {
                 $comments = getAllComments($_SESSION['objuser']['user_id'], $id);
